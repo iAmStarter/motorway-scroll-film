@@ -24,6 +24,14 @@
     .brand span { display: block; margin-top: 7px; font-size: 11px; font-weight: 500; letter-spacing: .2em; opacity: .65; }
     .place { text-align: right; font-size: 13px; font-weight: 650; letter-spacing: .12em; text-transform: uppercase; }
     .place span { display: block; margin-top: 6px; font-size: 12px; font-weight: 400; letter-spacing: .05em; opacity: .75; }
+    .credits { position: absolute; z-index: 8; top: 102px; right: clamp(22px,5vw,78px); }
+    .credits summary { display: grid; place-items: center; width: 36px; height: 36px; border: 1px solid rgba(255,255,255,.7); border-radius: 50%; background: rgba(7,20,24,.4); cursor: pointer; font: 700 18px/1 Georgia, serif; list-style: none; }
+    .credits summary::-webkit-details-marker { display: none; }
+    .credits summary:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+    .credits-panel { position: absolute; top: 46px; right: 0; width: min(340px,calc(100vw - 44px)); padding: 18px 20px; border: 1px solid rgba(255,255,255,.25); border-radius: 10px; background: rgba(9,22,25,.94); box-shadow: 0 15px 35px rgba(0,0,0,.25); font-size: 13px; line-height: 1.7; }
+    .credits-panel strong { display: block; margin-bottom: 7px; font-size: 14px; }
+    .credits-panel p { margin: 0; }
+    .credits-panel a { text-decoration-color: #b7beb8; text-underline-offset: 3px; }
     .intro, .outro { position: absolute; z-index: 4; left: clamp(22px,8vw,130px); bottom: clamp(150px,21vh,220px); max-width: min(760px,75vw); }
     .eyebrow { margin: 0 0 18px; font-size: 13px; letter-spacing: .25em; text-transform: uppercase; font-weight: 700; color: #e8e2cf; }
     h1, h2 { margin: 0; font-weight: 650; letter-spacing: -.045em; line-height: 1.14; text-wrap: balance; text-shadow: 0 2px 25px rgba(0,0,0,.16); }
@@ -44,9 +52,6 @@
     .rail { height: 2px; flex: 1; position: relative; background: rgba(255,255,255,.35); }
     .fill { height: 100%; width: 0; background: #e6e0c8; }
     .head { width: 9px; height: 9px; border-radius: 50%; background: #fff9df; position: absolute; top: 50%; left: 0; transform: translate(-50%,-50%); box-shadow: 0 0 0 4px rgba(255,255,255,.15); }
-    .footnote { min-height: 180px; background: #101819; padding: 40px clamp(22px,5vw,78px) 56px; display: flex; align-items: flex-start; justify-content: space-between; gap: 30px; color: #d1d5d0; font-size: 13px; line-height: 1.7; }
-    .footnote p { margin: 0; max-width: 700px; }
-    .footnote a { text-decoration-color: #8b938b; text-underline-offset: 4px; }
     .noscript { position: absolute; z-index: 10; bottom: 100px; left: 24px; max-width: 440px; padding: 18px; background: #101819; }
     @media (max-width: 700px) {
       .film { height: 620vh; }
@@ -63,8 +68,7 @@
       .stage { bottom: 90px; }
       .stage .detail { max-width: 260px; }
       .bottom { bottom: 22px; gap: 12px; }
-      .footnote { display: block; }
-      .footnote p + p { margin-top: 16px; }
+      .credits { top: 83px; }
     }
   </style>
 </head>
@@ -78,6 +82,7 @@
           <div class="brand">GROUND / JOURNEY<span>Construction scroll film</span></div>
           <div class="place">BRUCE HIGHWAY<span>Queensland, Australia</span></div>
         </header>
+        <details class="credits"><summary aria-label="เครดิตภาพ" title="เครดิตภาพ">i</summary><div class="credits-panel"><strong>เครดิตภาพ</strong><p><a href="https://commons.wikimedia.org/wiki/File:Time_lapse_of_Flood_Road_interchange_construction_(Bruce_Highway,_Cooroy_to_Curra,_Section_D).webm" target="_blank" rel="noopener noreferrer">TMRQld — Flood Road interchange</a> · <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener noreferrer">CC BY 3.0</a><br>ดัดช่วงวิดีโอและแปลงเป็นภาพ WebP สำหรับควบคุมด้วยการเลื่อนหน้า</p></div></details>
         <div class="intro" id="intro">
           <p class="eyebrow">ภาพจริง · ระยะเวลาก่อสร้าง 18 เดือน</p>
           <h1>จากผืนดิน<br>สู่เส้นทาง</h1>
@@ -98,10 +103,6 @@
         <noscript><div class="noscript">เปิด JavaScript เพื่อเลื่อนดูภาพการก่อสร้าง</div></noscript>
       </div>
     </section>
-    <footer class="footnote">
-      <p>ฟุตเทจจริง: <a href="https://commons.wikimedia.org/wiki/File:Time_lapse_of_Flood_Road_interchange_construction_(Bruce_Highway,_Cooroy_to_Curra,_Section_D).webm" target="_blank" rel="noopener noreferrer">TMRQld — Bruce Highway, Flood Road interchange</a> · <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener noreferrer">CC BY 3.0</a>. ตัดช่วงต้นและท้าย แปลงเป็นภาพ WebP และควบคุมการแสดงผลด้วยการเลื่อนหน้า</p>
-      <p>การตัดต่อจากภาพจริงมีจังหวะเปลี่ยนฉากและสภาพอากาศตามต้นฉบับ</p>
-    </footer>
   </main>
   <script>
     (() => {
